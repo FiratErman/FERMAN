@@ -1,0 +1,93 @@
+
+#Pour creer repository git, aller dans desktop et creer un fichier puis clik droit gitbash
+# pour créer fichier : ici on a crée un fichier index.html
+touch index.html
+
+#Pour initialiser 
+ git init
+
+#pour donner nom et mail au git
+git config --global user.name 'Firat Erman'
+git config --global user.email 'firat.erman@outlook.fr'
+
+
+#pour voir status actuel : il y a les UNTRACKED FILES ET LES CHANGEMENT TO BE COMMITED
+
+#Pour ajouter un fichier 
+git add fichier.sql
+
+#Pour ajouter tous les fichiers
+git add .
+
+#Pour apporter une mise à jour/ou charger un fichier( et apporter un commentaire ) QUE CA SOIT POUR UN FICHIER AJOUTER OU SUPPRIMER IL FAUT FAIRE CA
+git commit nomfichier -m 'changed Basepython.py'
+
+#Pour pas qu'un fichier soit pris en compte dans le add 
+#on peut dans le fichier en question mettre par exemple
+/dir2 #pour dir ne pas prendre en comtpe le folder dir2 
+*.txt #pour dire on veut pas le fichier txt 
+
+#To create another branch in the folder
+# le nom du fichier dans lequel on est apparait entre parenthse
+# sur le prompt 
+git branch nameofthebranch
+
+#pour dire à git qu'on veut switcher de branch
+git checkout nameofthebranch
+
+# pour merger les branch
+git merge nameofotherbranch
+
+#Pour lier le folder avec github 
+#1 
+git init
+git add fichiernom.extension
+git commit -m "first commit"
+git remote add origin https://github.com/FiratErman/Python-project-.git
+git push -u origin master 
+# Une fenetre github demandant login et pwd apparait: se connecter
+# Terminé 
+
+# pour charger fichier dans github
+git push
+
+
+#Pour créer un folder à partir d'un repository sur github
+#1 : creer un folder sur le pc
+#2 : ouvrir un git sur le fichier
+#3 : puis coller le lien du folder github present en cliquant sur clone
+ git clone lienhttps:// 
+# pour mettre à jour un fichier du git vers celui de notre bureau 
+git pull 
+
+
+#pour supprimer un fichier 
+git -rm leo.sql
+#pour supprimer un fichier UNTRACKED
+git clean -fdx
+#PUIS GIT COMMIT nomfichier -m "comentaire"
+
+
+
+EN GROS : 
+git remote rm origin           Pour supprimer le origin master
+
+git remote add origin lienhttp  Pour creer un origin master
+
+git add         Pour ajouter un fichier
+
+git commit fichier -m 'commentaire'
+
+git push -u origin master 
+
+
+
+
+# How to work in team : 
+- each member fork the base repository in their own account as the forked repository
+- clone this repository on their local machine
+git init 
+git add .
+git commit -m 'commentary' 
+git push -u origin master 
+git pull request 
