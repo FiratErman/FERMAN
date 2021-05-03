@@ -1,0 +1,5 @@
+node js: 
+    - is Runtime environnement for executing javascript code 
+    outside the browser 
+    - used to : 
+                - create API 

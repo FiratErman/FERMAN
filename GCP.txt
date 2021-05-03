@@ -1,0 +1,15 @@
+-create your project 
+- go to API and Services/ click on "+"/ search app egine admin API
+-To get name of the project 
+ gcloud projects lists
+ 
+ - Now have to set the project
+ gcloud config set project "past the project id"
+
+ -Now go to APP Engine : 
+    -gcloud app create 
+    it is asking the region: select yours 
+
+Once Application is created:
+- go to app engin/Dashboard
+- git clone a prepared github

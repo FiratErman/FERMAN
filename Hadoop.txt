@@ -1,0 +1,9 @@
+# create a file
+cat >Ferman 
+# copy it to the root hdfs
+hadoop fs -put Ferman /
+# you can check for it in browser 
+#a documentation specify how the trash have been created 
+#To delete it 
+hadoop fs -put /Ferman 
+#now if we check on the browser, the file has the username
