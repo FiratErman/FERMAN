@@ -3,6 +3,9 @@
 #- modules > statements > expressions > objects(it is data structure)
 
 ### STRING OPERATIONS
+from pandas.core.frame import DataFrame
+
+
 >>>S='SPAM'
 >>>S.find("pa")
 
@@ -82,7 +85,16 @@ L = [123, 'spam', 1.23]
 >>> squares
 [1, 4, 9, 16, 25]
 
-
+#create a column period that is concatenating year + semester
+df=pd.DataFrame({'Year':[2013,2012],'Semester':['s1','s2']})
+DataFrame	Year	Semester	
+0	        2013	   s1	        
+1	        2012	   s2	        
+df['period']=[str(x)+y for x,y in zip(df.Year,df.Semester)]
+df
+DataFrame	Year	Semester	period
+0	        2013	  s1	    2013s1
+1	        2012	  s2	    2012s2
 
 
 ### DICTIONARIES
