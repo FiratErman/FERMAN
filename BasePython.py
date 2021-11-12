@@ -28,8 +28,11 @@ In [5]: result = pd.concat(frames)
 
 ############################################################################
 #Select options
-Selecting data by row numbers (.iloc)
-Selecting data by label or by a conditional statment (.loc)
+#Selecting data by row numbers
+https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html
+ (.iloc)
+#Selecting data by label or by a conditional statment 
+(.loc)
 ############################################################################
 
 ###Création d'une table avec ajout d'une colonne
@@ -211,7 +214,7 @@ print (pd.to_numeric(df.b, errors='coerce'))
 
 ############################################################################
 #Pour filtrer avec plusieurs conditions
-f = pd.DataFrame({'Def':[True] *2 + [False]*4,'days since':[7,8,9,14,2,13],'bin':[1,3,5,3,3,3]})
+df = pd.DataFrame({'Def':[True] *2 + [False]*4,'days since':[7,8,9,14,2,13],'bin':[1,3,5,3,3,3]})
 
 
 temp2 = df[~df["Def"] & (df["days since"] > 7) & (df["bin"] == 3)]
@@ -328,6 +331,10 @@ df = source_df[["gene","cell1","cell2"]]
 
 
 #Pour créer trois colonnes
+"""apply the pandas series str.split() function on the “Address” column and pass
+ the delimiter (comma in this case) on which you want to split the column. 
+ Also make sure to pass True to the expand parameter.
+ df['Address'].str.split(',', n=1, expand=True)"""
 In [13]:
 df['gene'] = df['gene'].str.split('//').str[1]
 df
@@ -354,6 +361,25 @@ df1.rename(index=str, columns={"c43_nom_et_adresse_de_laccepteur_de_carte":A})
 
 #Pour changer format d'une variable en dataframe pyspark.
 df['name']=df['name'].astype(str)
+
+
+
+#APPLY a function 
+"""The apply() function is used to invoke a python function on values of Series.
+Series.apply(self, func, convert_dtype=True, args=(), **kwds)
+"""
+import numpy as np
+import pandas as pd
+s = pd.Series([31, 27, 11],
+              index=['Beijing', 'Los Angeles', 'Berlin'])
+def square(x):
+    return x ** 2
+
+s.apply(square)
+
+or withtout the function we wan use apply
+s.apply(lambda x: x**2) 
+s.apply([x**2 for x ])
 
 #Pour créer une colonne à partir des valeurs des autres colonnes
 def label_race (row):
