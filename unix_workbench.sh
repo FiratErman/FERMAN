@@ -109,3 +109,9 @@ bus
 >>> bash 
 >>> echo $backup 
 bus 
+
+#SHEBANG(shabang)
+#The first line of a shell/bash/dash script is known as "shebang" because first line and begin by "#!"
+#/bin/bash VS /bin/sh is an executable that represensting the system shell 
+# "#" in a script is read as a comment but "#!" is read as an executable it is called a she-bang it helps to identify the interpreter
+
