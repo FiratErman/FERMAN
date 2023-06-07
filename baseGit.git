@@ -36,6 +36,7 @@ git branch nameofthebranch
 git checkout nameofthebranch
 
 # pour merger les branch
+
 git merge nameofotherbranch
 
 #Pour lier le folder avec github 

@@ -3,6 +3,7 @@
 #- modules > statements > expressions > objects(it is data structure)
 
 ### STRING OPERATIONS
+from mimetypes import common_types
 from pandas.core.frame import DataFrame
 
 
@@ -120,3 +121,7 @@ D['quantity'] += 1
 
 ###TUPLES
 #Tuples are sequences like list but are IMMUTABLE
+
+
+Class ok:
+    def __init__

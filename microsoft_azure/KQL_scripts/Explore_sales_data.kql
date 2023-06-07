@@ -1,0 +1,39 @@
+ .create table sales (
+     SalesOrderNumber: string,
+     SalesOrderLineItem: int,
+     OrderDate: datetime,
+     CustomerName: string,
+     EmailAddress: string,
+     Item: string,
+     Quantity: int,
+     UnitPrice: real,
+     TaxAmount: real);
+
+ .ingest into table sales 'https://raw.githubusercontent.com/microsoftlearning/dp-203-azure-data-engineer/master/Allfiles/labs/01/files/sales.csv' 
+ with (ignoreFirstRecord = true)
+
+
+//to take the first 100
+sales
+| take 100
+
+sales
+| take 100
+
+
+
+sales
+| where Item == 'Road-250 Black, 48'
+
+// sales for this Item made after 2020
+ sales
+ | where Item == 'Road-250 Black, 48'
+ | where datetime_part('year', OrderDate) > 2020
+
+// sales with date filtered on a specific period
+// total revenue for each product
+sales
+ | where OrderDate between (datetime(2020-01-01 00:00:00) .. datetime(2020-12-31 23:59:59))
+ | summarize TotalNetRevenue = sum(UnitPrice) by Item
+ | sort by Item asc
+
