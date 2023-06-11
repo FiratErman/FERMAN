@@ -1,0 +1,19 @@
+{
+    "database_name":"johnson_and_johnson",
+    "table_name":"batches_det",    
+    "columns": [
+      {
+        "name": "batches_id",
+        "data_type": "VARCHAR(7)",
+        "primary_key": true
+      },
+      {
+        "name": "type",
+        "data_type": "VARCHAR(3)"
+      },
+      {
+        "name": "amount",
+        "data_type": "VARCHAR(25)"
+      }
+    ]
+  }

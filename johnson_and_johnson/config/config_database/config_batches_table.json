@@ -1,0 +1,23 @@
+{
+    "database_name":"johnson_and_johnson",
+    "table_name":"batches_table",    
+    "columns": [
+      {
+        "name": "id",
+        "data_type": "VARCHAR(8)"
+      },
+      {
+        "name": "batch_id",
+        "data_type": "VARCHAR(7)",
+        "primary_key": true
+      },
+      {
+        "name": "name",
+        "data_type": "VARCHAR(8)"
+      },
+      {
+        "name": "release_date",
+        "data_type": "VARCHAR(19)"
+      }
+    ]
+  }

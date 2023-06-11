@@ -1,0 +1,19 @@
+{
+    "database_name":"johnson_and_johnson",
+    "table_name":"batches_table",    
+    "columns": [
+      {
+        "name": "labs_workcenter",
+        "data_type": "VARCHAR(8)",
+        "primary_key": true
+      },
+      {
+        "name": "site_name",
+        "data_type": "VARCHAR(50)"
+      },
+      {
+        "name": "functional_area",
+        "data_type": "VARCHAR(3)"
+      }
+    ]
+  }
