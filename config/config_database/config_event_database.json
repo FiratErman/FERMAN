@@ -1,0 +1,43 @@
+{
+  "database_name":"jandj",
+  "table_name":"event_database",
+  "columns": [
+    {
+      "name": "id",
+      "data_type": "VARCHAR(8)",
+      "primary_key": true
+    },
+    {
+      "name": "parent_id",
+      "data_type": "VARCHAR(19)"
+    },
+    {
+      "name": "date_created",
+      "data_type": "VARCHAR(50)"
+    },
+    {
+      "name": "due_date",
+      "data_type": "VARCHAR(50)"
+    },
+    {
+      "name": "title",
+      "data_type": "VARCHAR(30)"
+    },
+    {
+      "name": "assigned_to",
+      "data_type": "VARCHAR(128)"
+    },
+    {
+      "name": "supervisor_leader",
+      "data_type": "VARCHAR(128)"
+    },
+    {
+      "name": "state",
+      "data_type": "VARCHAR(8)"
+    },
+    {
+      "name": "site_name",
+      "data_type": "VARCHAR(128)"
+    }
+  ]
+}

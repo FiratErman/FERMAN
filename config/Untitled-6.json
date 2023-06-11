@@ -1,0 +1,17 @@
+{
+    "columns": [
+      {
+        "name": "labs_workcenter",
+        "data_type": "",
+        "primary_key": true
+      },
+      {
+        "name": "site_name",
+        "data_type": ""
+      },
+      {
+        "name": "functional_area",
+        "data_type": ""
+      }
+    ]
+  }

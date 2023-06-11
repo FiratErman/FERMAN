@@ -18,5 +18,6 @@
             "password": "password",
             "database": "new_schema"
         }
-    ]
+    ],
+    "git.ignoreLimitWarning": true
 }
