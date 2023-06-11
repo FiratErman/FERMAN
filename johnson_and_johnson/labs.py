@@ -31,7 +31,6 @@ df.columns = df.columns.str.lower()
 df_columns = df.columns.tolist()
 
 
-
 database_name = table_data['database_name']
 table_name = table_data['table_name']
 columns = table_data['columns']

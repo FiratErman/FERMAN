@@ -1,6 +1,6 @@
 {
     "database_name":"johnson_and_johnson",
-    "table_name":"batches_table",    
+    "table_name":"labs",    
     "columns": [
       {
         "name": "labs_workcenter",
