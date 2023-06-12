@@ -1,11 +1,18 @@
+import datetime
+import json
 import mysql.connector
 import pandas as pd
-import json 
+import pytz
 from config.config_connection.mysql_connection import (
     user,
     password,
     host,
     database
+)
+from common import (
+    convert_date_columns,
+    replace_null_date,
+    convert_date_utc
 )
 
 # paths 
@@ -24,18 +31,32 @@ connection = mysql.connector.connect(
 with open(json_config_batches_table) as f:
     table_data = json.load(f)
 cursor = connection.cursor()
+# Define the variable
+database_name = table_data['database_name']
+table_name = table_data['table_name']
+columns = table_data['columns']
 
 # Import the csv file and create a dataframe with lowercasing column names
 df = pd.read_csv(csv_batches_table_file_path)
 df.columns = df.columns.str.lower()
 df_columns = df.columns.tolist()
 
+# Convert the date_created and due_date to the timestamp format yyyy-mm-dd HH:MM:SS
+actual_date_format = {
+    'release_date': "%d/%m/%Y %I:%M %p"
 
+}
+new_date_format = "%Y-%m-%d %H:%M:%S"
+df = convert_date_columns(df, actual_date_format, new_date_format)
 
-database_name = table_data['database_name']
-table_name = table_data['table_name']
-columns = table_data['columns']
-#data = table_data['data_type']
+# Replace null value in date columns with a default date 
+date_columns = ["release_date"]
+default_date = "1970-01-02 00:00:00"
+df = replace_null_date(df, date_columns, default_date)
+
+# Convert the date column to UTC for standardisazation, avoiding ambiguity, global compatibility, timezonee conversion
+local_timezone = datetime.datetime.now().astimezone().tzinfo
+df = convert_date_utc(df, date_columns, local_timezone)
 
 def create_table():
     # Generate SQL command

@@ -17,7 +17,7 @@
       },
       {
         "name": "release_date",
-        "data_type": "VARCHAR(19)"
+        "data_type": "TIMESTAMP"
       }
     ]
   }

@@ -13,11 +13,11 @@
     },
     {
       "name": "date_created",
-      "data_type": "VARCHAR(50)"
+      "data_type": "TIMESTAMP"
     },
     {
       "name": "due_date",
-      "data_type": "VARCHAR(50)"
+      "data_type": "TIMESTAMP"
     },
     {
       "name": "title",
