@@ -1,0 +1,2 @@
+# venv used in notebook
+source ~/Documents/git_workspace/ferman/.venv/bin/activate  

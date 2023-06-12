@@ -28,6 +28,14 @@ cursor = connection.cursor()
 # Import the json file and create a dataframe with lowercasing column names
 df = pd.read_json(json_batches_det_file_path)
 df.columns = df.columns.str.lower()
+
+# Convert the date_created and due_date to the timestamp format yyyy-mm-dd HH:MM:SS
+df['date_created'] = pd.to_datetime(df['date_created'], format="%d/%m/%Y %I:%M %p")
+df['due_date'] = pd.to_datetime(df['due_date'], format="%Y/%d/%m %I:%M %p")
+df['date_created'] = df['date_created'].dt.strftime("%Y-%m-%dT%H:%M:%S")
+df['due_date'] = df['due_date'].dt.strftime("%Y-%m-%dT%H:%M:%S")
+
+# Create the list of columns
 df_columns = df.columns.tolist()
 
 
