@@ -13,7 +13,7 @@
       },
       {
         "name": "functional_area",
-        "data_type": "VARCHAR(3)"
+        "data_type": "VARCHAR(5)"
       }
     ]
   }

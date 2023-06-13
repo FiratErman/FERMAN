@@ -31,3 +31,5 @@ While storing datetime values in UTC is a common practice, the choice of datetim
 # Each time I am creating a table it is appending 
 
 # TODO: replace null values
+# TODO: fix the primary key issue after the join then you can implement the new id
+# TODO: create a function to replace nan and '' with null

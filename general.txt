@@ -1,2 +1,14 @@
 # venv used in notebook
-source ~/Documents/git_workspace/ferman/.venv/bin/activate  
+source ~/Documents/git_workspace/ferman/.venv/bin/activate
+
+# Airflow 
+first activaite pyenv/bin/activate
+# activate airflow
+airflow webserver -p 8080
+# separately active airflow scheduler but need to activate also the pyenv env
+airflow scheduler 
+
+# To kill an airflow webserver then you need to create again the webserver
+lsof -i tcp:8080
+#kill it
+kill <pid>
